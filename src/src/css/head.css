@@ -1,0 +1,35 @@
+#head{
+    background: black;
+}
+#title{
+    color: white;
+    padding: inherit;
+    font-size: 24pt;
+    font-weight: 900;
+}
+#san{
+    padding-left: 20px ;
+}
+#popimg{
+    height: 30px;
+    width: 30x;
+    border-radius: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+#bgtm{
+    font: bold 22px italic;
+  text-decoration: none;
+  background-color: greenyellow;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  text-align: center;
+  padding-left: -10px;
+}
+#navheader{
+    background-color: white;
+}

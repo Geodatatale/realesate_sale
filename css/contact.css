@@ -1,0 +1,82 @@
+.contact-form{
+        max-width: 50%;
+        margin: auto;
+        border-radius: 25px;
+        background: #96bb72;
+        padding: 20px
+    }
+    input[type=text], select{
+        width: 100%;
+        padding: 5px 5px 5px 5px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #e65100;
+        border-radius: 20px;
+    
+        
+    }
+    input[type=number], select{
+        width: 100%;
+        padding: 5px 5px 5px 5px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #e65100;
+        border-radius: 20px;
+       
+        
+    }
+    input[type=email], select{
+        width: 100%;
+        padding: 5px 5px 5px 5px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #e65100;
+        border-radius: 20px;
+       
+        
+    }
+    input[type=date], select{
+        width: 100%;
+        padding: 5px 5px 5px 5px ;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #e65100;
+        border-radius: 20px;
+    }
+    #campaign{
+        width: 100%;
+        padding: 5px 5px 5px 5px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #e65100;
+        border-radius: 20px;
+    }
+#quote{
+    color: red;
+    text-align: justify;
+    padding: 10px 10px 10px 10px;
+    background: white;
+    border-radius: 5px;
+}
+#cont{
+    text-align: justify;
+    padding-left: 100px
+}
+#submit{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+.label label{
+    color: orangered;
+    margin-bottom: -5px;
+    padding: 0px 0px 0px 0px;
+    text-align: match-parent;
+    font-size: 14px;
+}
+.label input{
+    background: rgba(215, 208, 211, 0.22);
+}
+.label select{
+    background: rgba(215, 208, 211, 0.22);
+}

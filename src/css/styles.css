@@ -1,0 +1,150 @@
+#header{
+background-color: whitesmoke;
+    color: white;
+}
+#head{
+background-color: whitesmoke;
+    color: white;
+}
+body{
+    background-color: chocolate;
+    background-image: url(img/maplegend/homepc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-decoration-color: black;
+    color: black;
+
+    
+}
+p{
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px
+}
+.button {
+  font: bold 22px italic;
+  text-decoration: none;
+  background-color: greenyellow;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  text-align: center;
+}
+.myForm {
+    text-align: left;
+    padding: 100PX;
+    left: 0;
+    align-items: center;
+}
+#asira{
+    text-align: left;
+    left: 10;
+    width: inherit;
+    
+    
+}
+#san{
+    color: white;
+    align-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 52pt;
+    font-weight: bolder;
+}
+#topic{
+    color: aqua;
+    background-color: beige;
+}
+.sidebarsec{
+    border-style: solid;
+  border-color: darkorange;
+    border-radius: 5px;
+    border-width: thin;
+    background-color: white;
+    padding: 3px 3px 3px 3px;
+    background-size: 500px 500px;
+    height: 300px;
+    width: 100%;
+    
+    
+}
+.sidebarsec:hover{
+    border-color: red;
+}
+.sidebarsec  img{
+    background-color: darkgray;
+    color: blue;
+    border-radius: 5px;
+    text-align: justify-all;
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    margin-left: 5px;
+    margin-right: 2px;
+  
+    
+}
+.sidebarsec p {
+    padding: 2px 2px 2px 2px;
+}
+
+#side-bar{
+    background-color: lightgrey;
+    
+}
+.headerland{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+}
+.headerland p{
+    padding: 1px;
+
+}
+.headerland h4{
+    text-align: center;
+    font: 28px;
+    color: dodgerblue
+}
+.headerland img{
+    height: 250px;
+    width: 100%;
+    padding: 0px;
+    margin-left: 0px;
+}
+.sidebarsec strong{
+    line-height: 2.5px;
+    padding: px 5px 5px 5px;
+   
+}
+#board {
+    float: left; width: 50%;
+    height: 150px;
+}
+.illuminated{
+   padding: 0px 0px 0px
+}
+.topheader{
+    border-style: solid;
+    border-width: thin;
+  border-color: darkorange;
+    border-radius: 5px;
+    background-color: white;
+    background-size: 500px 500px;
+    
+}
+.btm{
+    color: aqua;
+    background-color: cornflowerblue;
+    box-sizing: white
+}
+.my-labels{
+    background-color:  rgba(0,0,0,0);
+    outline-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    box-shadow: none;
+}

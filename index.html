@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Geoffrey Asira">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>geodatale</title>
+        <link rel="stylesheet" href="src/leaflet.css">
+        <link rel="stylesheet" href="src/css/bootstrap.css">
+        <link rel="stylesheet" href="src/plugins/L.Control.MousePosition.css">
+        <link rel="stylesheet" href="src/plugins/L.Control.Sidebar.css">
+        <link rel="stylesheet" href="src/plugins/Leaflet.PolylineMeasure.css">
+        <link rel="stylesheet" href="src/plugins/easy-button.css">
+        <link rel="stylesheet" href="src/css/popupstyle.css">
+        <link rel="stylesheet" href="src/plugins/leaflet-styleeditor/css/Leaflet.StyleEditor.css">
+        <link rel="stylesheet" href="src/css/font-awesome.min.css">
+        <link rel="stylesheet" href="src/plugins/leaflet.awesome-markers.css">
+        <link rel="stylesheet" href="src/plugins/leaflet-mapkey/MapkeyIcons.css">
+        <link rel="stylesheet" href="src/plugins/leaflet-mapkey/L.Icon.Mapkey.css">
+        <link rel="stylesheet" href="src/plugins/MarkerCluster.css">
+        <link rel="stylesheet" href="src/plugins/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="src/plugins/leaflet-legend.css">
+        <link rel="stylesheet" href="src/jquery-ui.min.css">
+        <link rel="stylesheet" href="src/plugins/leaflet.reachability.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="src/css/head.css">
+        <link rel="stylesheet" href="src/Leaflet.BigImage.min.css">
+        <link rel="stylesheet" href="src/plugins/leaflet.groupedlayercontrol.min.css">
+        <link rel="stylesheet" href="src/css/styles.css">
+        <link rel="stylesheet" href="src/css/dashstyle.css">
+        <script src="src/leaflet-src.js"></script>
+        <script src="src/jquery-3.2.0.min.js"></script>
+        <script src="src/plugins/L.Control.MousePosition.js"></script>
+        <script src="src/plugins/L.Control.Sidebar.js"></script>
+        <script src="src/plugins/Leaflet.PolylineMeasure.js"></script>
+        <script src="src/plugins/easy-button.js"></script>
+        <script src="src/plugins/leaflet-providers.js"></script>
+        <script src="src/plugins/leaflet-styleeditor/javascript/Leaflet.StyleEditor.js"></script>
+        <script src="src/plugins/leaflet-styleeditor/javascript/Leaflet.StyleForms.js"></script>
+        <script src="src/plugins/leaflet.ajax.min.js"></script>
+        <script src="src/plugins/leaflet.sprite.js"></script>
+        <script src="src/plugins/leaflet.awesome-markers.min.js"></script>
+        <script src="src/plugins/leaflet-mapkey/L.Icon.Mapkey.js"></script>
+        <script src="src/plugins/leaflet.markercluster.js"></script>
+        <script src="src/plugins/leaflet.geometryutil.js"></script>
+        <script src="src/plugins/leaflet-legend.js"></script>
+        <script src="src/jquery-ui.min.js"></script>
+        <script src="src/turf.min.js"></script>
+        <script src="src/plugins/leaflet.reachability.js"></script>
+        <script src="src/plugins/leaflet.facebook.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.min.js"></script>
+        <script src="src/Leaflet.BigImage.min.js"></script>
+        <script src="src/leaflet.browser.print.min.js"></script>
+        <script src="src/plugins/leaflet.groupedlayercontrol.min.js"></script>
+        <link rel="shortcut icon" href="img/logo/circle logo.png">
+
+	<link href="assets/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/bootstrap-4.5.0-dist/css/bootstrap.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<link href="assets/font awesome/css/fontawesome.css" rel="stylesheet" media="screen">
+        
+        
+<!--    ***************  Begin Leaflet.Draw-->
+    
+        <script src="src/plugins/leaflet-draw/Leaflet.draw.js"></script>
+        <script src="src/plugins/leaflet-draw/Leaflet.Draw.Event.js"></script>
+        <link rel="stylesheet" href="src/plugins/leaflet-draw/leaflet.draw.css"/>
+        <script src="src/plugins/leaflet-draw/Toolbar.js"></script>
+        <script src="src/plugins/leaflet-draw/Tooltip.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/GeometryUtil.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/LatLngUtil.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/LineUtil.Intersect.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/Polygon.Intersect.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/Polyline.Intersect.js"></script>
+        <script src="src/plugins/leaflet-draw/ext/TouchEvents.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/DrawToolbar.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Feature.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.SimpleShape.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Polyline.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Circle.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Marker.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Polygon.js"></script>
+        <script src="src/plugins/leaflet-draw/draw/handler/Draw.Rectangle.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/EditToolbar.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/EditToolbar.Edit.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/EditToolbar.Delete.js"></script>
+        <script src="src/plugins/leaflet-draw/Control.Draw.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/Edit.Poly.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/Edit.SimpleShape.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/Edit.Circle.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/Edit.Rectangle.js"></script>
+        <script src="src/plugins/leaflet-draw/edit/handler/Edit.Marker.js"></script>
+        <script src="src/plugins/leaflet-search.js"></script>
+         
+        
+<!--    **************  End of Lealet Draw-->
+
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-md" id="navheader" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img class="logo" src="img/optiven.png" width="100%" height="70" alt=""></a>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
+
+          <div  class="col-md-12 ">
+            <h3 class="text-center" ><span style="padding: inherit;font-size: 23pt;
+              font-weight: 900;text-align: center;">AMANI BREEZE GARDEN  </h3>
+           </div>
+                
+    </div>
+  </div>
+</nav>
+       <section id="me">
+        <div id="side-bar" class="col-md-11">
+         <div class="headerland">
+          <h4><strong>Land in Mlolongo</strong></h4> 
+       <p>On sale in Mlolongo, this beautiful land is ready for development and It is conveniently located only 3km off the Mombasa road, next to Suraya apartments.
+        The plots are vacant, rectangular in shape, slopes gently (perfect for drainage), boasts of black cotton soil, and is registered under a free-hold title deeds. The sizes, shape and location of the plots offer the perfect opportunity for developing of stand - alone , semi-detached houses or apartments subject to obtaining necessary approvals from the relevant authorities. Mains electricity is available for connection. Piped water is available from City council as well as from a private borehole sunk a few meters away A good all-weather road provides access to the subject property as well as other social developments Security is exceptional with the Mlolongo police Post just a short distance away.
+        This is a very safe area to be outdoors and commune with neighbors. </p>
+  <img src="img/land.jpg">
+       </div>
+        </div>
+        <div id="mapdiv" class="col-md-12"></div>
+        <script>
+            var mymap;
+            var lyrOSM;
+            var lyrWatercolor;
+            var lyrTopo;
+            var lyrImagery;
+            var lyrOutdoors;
+            var lyrEagleNests;
+            var lyrbilboards
+            var lyrClientLines;
+            var lyrClientLinesBuffer;
+            var parcels;
+            var lyrBUOWLbuffer;
+            var jsnBUOWLbuffer;
+            var lyrGBH;
+            var lyrSearch;
+            var lyrMarkerCluster;
+            var mrkCurrentLocation;
+            var fgpDrawnItems;
+            var ctlAttribute;
+            var ctlScale;
+            var ctlMouseposition;
+            var ctlMeasure;
+            var ctlEasybutton;
+            var ctlSidebar;
+            var ctlLayers;
+            var ctlDraw;
+            var ctlStyle;
+            var ctlLegend;
+            var ctlPrint;
+            var ctlPrint2;
+            var ctlGroupLayer;
+            var objBasemaps;
+            var reachabilityControl;
+            var objOverlays;
+            var arProjectIDs = [];
+            var arHabitatIDs = [];
+            var arEagleIDs = [];
+            var arBillboardIDs = [];
+            var arRaptorIDs = [];
+            var facebookcontrol;
+            var myIcon;
+            var billboardiconunder;
+            var bilboardicon;
+            var bilboardiconva;
+            var layergroup;
+            
+            $(document).ready(function(){
+                
+                //  ********* Map Initialization ****************
+                
+                mymap = L.map('mapdiv', {center:[-1.40766,36.96582], zoom:16.2,  attributionControl:false});
+                
+                ctlSidebar = L.control.sidebar('side-bar').addTo(mymap);
+                ctlSidebar.show();
+                ctlEasybutton = L.easyButton('glyphicon-transfer', function(){
+                   ctlSidebar.toggle(); 
+                }).addTo(mymap);
+                
+                ctlAttribute = L.control.attribution().addTo(mymap);
+                ctlAttribute.addAttribution('OSM');
+                ctlAttribute.addAttribution('&copy; <a href="http://datatale.com">Geoffrey asira LLC</a>');
+                
+                ctlScale = L.control.scale({position:'bottomleft', metric:false, maxWidth:200}).addTo(mymap);
+                reachabilityControl = L.control.reachability({
+                apiKey: '5b3ce3597851110001cf6248c9f85cae50384963b985be5b9d179444',
+                styleFn: styleIsolines,
+                mouseOverFn: highlightIsolines,
+                mouseOutFn: resetIsolines,
+                clickFn: clickIsolines,
+                markerFn: isolinesOrigin,
+                expandButtonContent: '',
+                expandButtonStyleClass: 'reachability-control-expand-button fa fa-bullseye',
+                collapseButtonContent: '',
+                collapseButtonStyleClass: 'reachability-control-collapse-button fa fa-caret-up',
+                drawButtonContent: '',
+                drawButtonStyleClass: 'fa fa-pencil',
+                deleteButtonContent: '',
+                deleteButtonStyleClass: 'fa fa-trash',
+                distanceButtonContent: '',
+                distanceButtonStyleClass: 'fa fa-road',
+                timeButtonContent: '',
+                timeButtonStyleClass: 'fa fa-clock-o',
+                travelModeButton1Content: '',
+                travelModeButton1StyleClass: 'fa fa-car',
+                travelModeButton2Content: '',
+                travelModeButton2StyleClass: 'fa fa-bicycle',
+                travelModeButton3Content: '',
+                travelModeButton3StyleClass: 'fa fa-male',
+                travelModeButton4Content: '',
+                travelModeButton4StyleClass: 'fa fa-wheelchair-alt'
+                }).addTo(mymap);
+                      // *********  reachability plug in function *****************
+            function styleIsolines(feature) {
+                // NOTE: You can do some conditional styling by reading the properties of the feature parameter passed to the function
+                return {
+                    color: '#FFFF00',
+                    weight: 5,
+                    opacity: 0.5,
+                    fillOpacity: 0.3,
+                    fillColor:'rgba(255, 0, 0, 0.1)',
+                    dashArray: '5,10'
+                    
+                };
+            }
+
+            // Example function to style the isoline polygons when the user hovers over them
+            function highlightIsolines(e) {
+                // NOTE: as shown in the examples on the Leaflet website, e.target = the layer the user is interacting with
+                var layer = e.target;
+
+                layer.setStyle({
+                    fillColor: 'rgb(192,192,192,0.2)',
+                    dashArray: '1,13',
+                    weight: 6,
+                    fillOpacity: '0.5',
+                    opacity: '2'
+                });
+            }
+
+            // Example function to reset the style of the isoline polygons when the user stops hovering over them
+            function resetIsolines(e) {
+                // NOTE: as shown in the examples on the Leaflet website, e.target = the layer the user is interacting with
+                var layer = e.target;
+
+                reachabilityControl.isolinesGroup.resetStyle(layer);
+            }
+
+            // Example function to display information about an isoline in a popup when the user clicks on it
+            function clickIsolines(e) {
+                // NOTE: as shown in the examples on the Leaflet website, e.target = the layer the user is interacting with
+                var layer = e.target;
+                var props = layer.feature.properties;
+                var popupContent = 'Mode of travel: ' + props['Travel mode'] + '<br />Range: 0 - ' + props['Range'] + ' ' + props['Range units'] + '<br />Area: ' + props['Area'] + ' ' + props['Area units'] + '<br />Population: ' + props['Population'];
+                if (props.hasOwnProperty('Reach factor')) popupContent += '<br />Reach factor: ' + props['Reach factor'];
+                layer.bindPopup(popupContent).openPopup();
+            }
+
+            // Example function to create a custom marker at the origin of the isoline groups
+            function isolinesOrigin(latLng, travelMode, rangeType) {
+                return L.circleMarker(latLng, { radius: 4, weight: 2, color: '#0073d4', fillColor: '#fff', fillOpacity: 1 });
+            }
+              // Add the reachability plugin
+           
+            // Setup error handlers in case there is a problem when calling the API
+            mymap.on('reachability:error', function () {
+                alert('Unfortunately there has been an error calling the API.\nMore details are available in the console.');
+            });
+
+            mymap.on('reachability:no_data', function () {
+                alert('Unfortunately no data was received from the API.\n');
+            });
+                ctlMouseposition = L.control.mousePosition().addTo(mymap);
+                ctlMeasure = L.control.polylineMeasure().addTo(mymap);
+             
+
+                    
+                //   *********** Layer Initialization **********
+                var Jawg_Dark = L.tileLayer('https://{s}.tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
+                attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy;  contributors',
+                minZoom: 0,
+                maxZoom: 22,
+                subdomains: 'abcd',
+                accessToken: ' 0s5dBwPnRsDDF47Yw5nmW6OD5dsdOfn3t7Z9jKUaGqafPXPcvoAqTOuORA14yVWa'
+            });
+                var Jawg_Matrix = L.tileLayer('https://{s}.tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
+                attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                minZoom: 0,
+                maxZoom: 22,
+                subdomains: 'abcd',
+                accessToken: ' 0s5dBwPnRsDDF47Yw5nmW6OD5dsdOfn3t7Z9jKUaGqafPXPcvoAqTOuORA14yVWa '
+            });
+                var basemapCartoNoLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+                attribution: '&copy;OpenStreetMap, &copy;CartoDB'
+            });
+                var layer_GoogleHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
+            
+            
+                lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
+                lyrTopo = L.tileLayer.provider('Thunderforest.Outdoors');
+                lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
+        
+                
+               mymap.addLayer(lyrImagery);
+               function style(feature) {
+                        return {
+                            fillColor: 'white',
+                            weight: 1,
+                            opacity: 1,
+                            color: 'white',
+                            fillOpacity: 0
+                        };
+                    }
+                L.geoJSON.ajax('data/parcelf.geojson',{style: style}).addTo(mymap); 
+               var geojsonLabel = {
+            radius: 0,
+                };
+                
+                var label =new L.GeoJSON.AJAX('data/label.geojson', {
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, geojsonLabel).bindTooltip(feature.properties.label, {permanent: true, 
+                    direction: "center",
+                    className: "my-labels"}).openTooltip();
+                    }
+                }); 
+               mymap.on('zoomend',function(){
+                if (mymap.getZoom() < 17.1){
+                    mymap.removeLayer(label);
+                }
+                 else{
+                    mymap.addLayer(label);
+                 }
+             });
+               function states_style(feature) {
+                return {
+                    color: "white",
+                    weight: 1,
+                    fillColor: states_color(feature.properties.status),
+                    fillOpacity: 0.7
+                };
+            } 
+                function states_color(p) {
+                    if(p === "available") return "#30F74B";
+                    if(p === "sold") return "red";
+                    if(p === "reserved") return "#5A30F7";
+                    return "#F79430";} 
+                
+                parcels=L.geoJSON.ajax('data/amanip.geojson', {style: states_style, onEachFeature:onEachLayer}).addTo(mymap).on('click', function () {
+                    ctlSidebar.show();
+                    });
+                 function onEachLayer(feature, layer) {
+                layer.on('click', function(e) {
+                    $(".status").html(feature.properties.status);
+                    $(".image_url").html("<img src='img/" + feature.properties.image_url+"' id='popimg' >");
+                    $(".sideba").html("<img src='img/" + feature.properties.image_url+"'  >");
+                    $(".sidebar").html("--  --"+"<section class='sidebarsec'>"+"<p>"+"<b style='color: dodgerblue;'>"+"bilboard id #" +feature.properties.f_id+"</b>"+"<br>"+"<p>"+feature.properties.description +"</p>"+"<img src='img/" + feature.properties.image_url+"' id='board' >"+"<img src='markers/impression.png' style='background-color: white;'>"+"<strong>"+"Impression: "+"</strong>" +feature.properties.daily_impressions+"<br>"+"<br>"+"<img src='markers/illumination.png' style='background-color: white;'>"+"<strong>"+"Illumination: "+"</strong>" +feature.properties.illuminated+"<br>"+"<br>"+"<img src='markers/size.png' style='background-color: white;'>"+"<strong>"+"Size: "+"</strong>" +feature.properties.size+"<br>" );
+                 });
+                     if (feature.properties){
+                         
+                     }
+                }
+                function onEachLayer(feature, layer) {
+               
+                 layer.bindPopup("<div id = 'popup'>" +"<img src='img/land.jpg'style='float:left;width:50px;height:50px;alighn:left;border-radius: 20%;' >"+"<h4> "+" &nbsp; &nbsp;"+"<br>"+" &nbsp; &nbsp;&nbsp;" +"PlotID:#"+"<i>"+feature.properties.Id+"</i>"+" &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;"+"<a class='buttonpop' href='#popup_info'>"+"<span id=amounts>"+"Details"+"</span>"+"</a>"+"<div id='popup_info' class='overlay_popup_info'>"
+                    +
+                      "<div class='popup_info'>"
+                    +
+                   
+                      "<br>"+"</b>"+"<br>"+"<img src='img/" + feature.properties.plan+"'style='float:left;width:300px;height:300px;alighn:left;border-radius: 5px;' >"+"<br>"+"<br>"+"<br>"+"<img  src='img/icons/bedroom.png' id='image'>"+" "+feature.properties.bedrooms+" Bedrooms"+" &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"+"<img src='img/icons/bath.png' id='image'>"+" "+feature.properties.bathroooms+" Bathroom"+"<br>"+"<img src='img/icons/bedroom.png' id='image'>"+" "+feature.properties.bedrooms+" Bedrooms"+" &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"+"<img src='img/icons/carpark.png' id='image'>"+" "+feature.properties.carpark+" Carpark"+           
+                                 
+                        "<a class='close_popup_info' href='#'>"+"&times;"+"</a>"
+                    +
+                        "<div class='content_popup_info'>"
+                    +
+                  
+                        "</div>"
+                    +
+                      "</div>"
+                    +
+                    "</div>"
+                    
+
+                    +"<h4>"+"<br>"+" &nbsp; &nbsp;&nbsp;"+"<span id=pop>"+feature.properties.status.toUpperCase()+"</span>"+" &nbsp; &nbsp;&nbsp;"+"<span id=amount>"+"Ksh."+feature.properties.price+"</span>"+"<br>"+"<br>"+"LR No:"+" "+feature.properties.LR+"<br>"+"<br>"+"Developed:"+" "+feature.properties.develope_1+"<br>"+"<br>"+"</div>"+"<div>"+
+               "<button type='submit' class='btn btn-primary btn-block' onclick='openPopup()' id='btm'>"+"Booking"+"</button>"+"</div>"+"<div class='popups' id='popups'>"+"<img src='img/land.jpg' >"+"<br>"+"<br>"+"CLIENT INFO"+'<br>'+
+               '<form action="mailto:kenyacleanmaster@gmail.com" id="form">'+
+                '<input type="text" classs="form"   id="name" name="name" value="Your name">'+'<br>'+'<br>'+
+                '<input type="email" classs="form"  id="email" name="email" value="Enter your email">'+'<br>'+'<br>'+
+                '<textarea id="txt"  classs="form" name="w3review" rows="3" cols="50">'+
+                 'Your message'+'<br>'+'NB: Dont forget to include Bilboard ID e.g#23'+feature.properties.Id+
+                '</textarea><br>'+
+                '<input type="tel"  clas="form" id="tel" name="tel" value="Phone Number">'+'<br>'+"Booking for plot No: "+"<b>"+feature.properties.Id+"</b>"+'<br>'+
+                "<button type='submit' onclick='closePopup()' >"+"OK"+"</button>"+
+                 '</form> '+                                                                                                       
+                
+                "</div>"+
+              "</div>"  ,{minWidth:300,minHeight:300} );
+                
+             }
+                var layer2010 = L.imageOverlay('data/g2010.jpg',[[ -1.391239133,36.932981824], [-1.431207849,36.979365764]]);
+                var layer2015 = L.imageOverlay('data/g2015.jpg',[[ -1.391239133,36.932981824], [-1.431207849,36.979365764]]);
+                var layer2017 = L.imageOverlay('data/g2017.jpg',[[ -1.391239133,36.932981824], [-1.431207849,36.979365764]]);
+                
+                var layer2019 =L.imageOverlay('data/g2019.jpg',[[ -1.391239133,36.932981824], [-1.431207849,36.979365764]]);
+            
+                fgpDrawnItems = new L.FeatureGroup();
+                fgpDrawnItems.addTo(mymap);
+          
+                 bilboardicon = L.icon({
+                iconUrl:'markers/available.png',
+                iconSize: [25, 25],
+                iconAnchor: [10, 12],
+                popupAnchor: [0, -28]
+                });
+                bilboardiconva = L.icon({
+                iconUrl:'markers/notavailable.png',
+                iconSize: [25, 25],
+                iconAnchor: [10, 12],
+                popupAnchor: [0, -28]
+                });
+                myIcon = L.icon({
+                iconUrl:'markers/reserved.png',
+                iconSize: [25, 25],
+                iconAnchor: [10, 12],
+                popupAnchor: [0, -28]
+                });
+                billboardiconunder =  L.icon({
+                iconUrl:'markers/Underconstruction.png',
+                iconSize: [25, 25],
+                iconAnchor: [10, 12],
+                popupAnchor: [0, -28]
+                });
+                lyrbilboards = L.geoJSON.ajax('data/newbilboard.geojson',{pointToLayer:returnBilboardmarker,filter:filterBilboard}).addTo(mymap);
+                lyrbilboards.on('data:loaded', function(){
+                    arBillboardIDs.sort(function(a,b){return a-b});
+                    $("#txtFindBilboard").autocomplete({
+                        source:arBillboardIDs
+                    });
+                });
+                
+                
+               
+                // ********* Setup Layer Control  ***************
+                
+                objBasemaps = {
+                     "Imagery":lyrImagery,
+                    "Imagery with<br>labels ":layer_GoogleHybrid_0,
+                    "Open Street Maps": lyrOSM,
+                   
+                };
+            
+                var  groupedOverlays = {
+                     "Timestamp":{
+                    "2010":layer2010,
+                    "2015":layer2015,
+                    "2017":layer2017,
+                    "2019":layer2019,
+                    },
+                    "Land onSale":{
+                    "Parcel":parcels,
+                    },          
+                };
+                var options = {
+                 // Make the "Landmarks" group exclusive (use radio inputs)
+                exclusiveGroups: ["Real estate Properties"],
+                 // Show a checkbox next to non-exclusive group labels for toggling all
+                groupCheckboxes: false,
+                collapsed: false,
+                };
+                ctlGroupLayer = L.control.groupedLayers(objBasemaps, groupedOverlays,options  );
+                mymap.addControl(ctlGroupLayer);
+                
+                 //***** search control ***   
+              mymap.addControl(L.control.search({position:'topleft'}));
+                //** legend **
+                
+                let legend = L.control({position: "topright"});
+                legend.onAdd = function() {
+                let div = L.DomUtil.create("div", "legend");
+                    div.innerHTML =
+                '<b>Land Status<br /></b><table><tr><td style="text-align: center;"><img src="legend/leg3.png" id="san" /> </td><td>&nbsp;&nbsp; Sold</td></tr><tr><td style="text-align: center;"><img src="legend/available1.png" id="san" /> </td><td>&nbsp;&nbsp; Available</td></tr></tr><tr><td style="text-align: center;"><img src="legend/leg1.png" id="san"/> </td><td>&nbsp;&nbsp; Reserved</td></tr></tr><tr><td style="text-align: center;"><img src="legend/leg2.png" id="san" /> </td><td>&nbsp;&nbsp; Unreleased</td></tr></table>' ;
+                return div;
+                };
+                legend.addTo(mymap);
+                //***** print control ***
+                
+                ctlPrint2 = L.control.browserPrint({position:'topleft'}).addTo(mymap);
+                
+                ctlDraw = new L.Control.Draw({
+                    draw:{
+                        polygon:false,
+                        circle:false,
+                        rectangle:false,
+                    },
+                    edit:{
+                        featureGroup:fgpDrawnItems,
+                        remove:false
+                    }
+                });
+                ctlDraw.addTo(mymap);
+                
+                // ************ Location Events **************
+                
+                mymap.on('locationfound', function(e) {
+                    console.log(e);
+                    if (mrkCurrentLocation) {
+                        mrkCurrentLocation.remove();
+                    }
+                    mrkCurrentLocation = L.circle(e.latlng, {radius:e.accuracy/2}).addTo(mymap);
+                    mymap.setView(e.latlng, 14);
+                });
+                
+                mymap.on('locationerror', function(e) {
+                    console.log(e);
+                    alert("Location was not found");
+                })
+                
+            });
+            
+            // ********* billboard Functions *****************
+            $("#btnBilboard").click(function(){
+               $("#lgndBilboardDetail").toggle(); 
+            });
+             function returnBilboardmarker(json, latlng){
+                 var att = json.properties;
+                if (att.status=='Available') {
+                    var clrNest = bilboardicon;
+                } else if (att.status=='Reserved') {
+                    var clrNest = myIcon;
+                } else if (att.status=='Underconstruction') {
+                    var clrNest = billboardiconunder;
+                }  else {
+                    var clrNest = bilboardiconva;
+                }
+                return L.marker(latlng, { icon:clrNest}).bindPopup(" &nbsp; &nbsp;&nbsp;"+"<img src='img/" + att.image_url+"' id='popimg' >"+"<b>"+"BillboardID:#"+" &nbsp; &nbsp;&nbsp;"+json.Id+"</b>"+ 
+                '<table>\
+                  \
+                    <tr>\
+                        <th scope="row">Status</th>\
+                        <td>' + att.status + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Size</th>\
+                        <td>' + att.size + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Direction</th>\
+                        <td>' + att.physical_location + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Available date</th>\
+                        <td>' + att.end_date + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UTM_X</th>\
+                        <td>' + att.x_coordinate + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UTM_Y</th>\
+                        <td>' + att.y_coordinate + '</td>\
+                    </tr>\
+                </table>'+"<br>"+"<div>"+"<div class='text-center'>"+
+               "<button type='submit' class='btn btn-primary btn-block' onclick='openPopup()' id='btm'>"+"Booking"+"</button>"+"</div>"+"<div class='popups' id='popups'>"+"<img src='img/" + att.image_url+"' >"+"<br>"+"<br>"+"CLIENT INFO"+'<br>'+
+               '<form action="mailto:kenyacleanmaster@gmail.com" id="form">'+
+                '<input type="text" classs="form"   id="name" name="name" value="Your name">'+'<br>'+'<br>'+
+                '<input type="email" classs="form"  id="email" name="email" value="Enter your email">'+'<br>'+'<br>'+
+                '<textarea id="txt"  classs="form" name="w3review" rows="3" cols="50">'+
+                 'Your message'+'<br>'+'NB: Dont forget to include Bilboard ID e.g#23'+
+                '</textarea><br>'+
+                '<input type="tel"  classs="form" id="tel" name="tel" value="Phone Number">'+'<br>'+'<br>'+
+                "<button type='submit' onclick='closePopup()' >"+"OK"+"</button>"+
+                 '</form> '+                                                                                                       
+                
+                "</div>"+
+              "</div>"  ,{minWidth:300,minHeight:300} );
+                
+             }
+           let popup = document.getElementById("popups");
+            function openPopup() {
+                popups.classList.add("open-popups");
+            }
+            function closePopup() {
+                popups.classList.remove("open-popups");
+            }
+            function returnBilboardID(id){
+                var arLayers = lyrbilboards.getLayers();
+                for(i=0;i<arLayers.length-1;i++){
+                    var bilboardID = arLayers[i].feature.properties.Property;
+                    if(bilboardID== id){
+                        return arLayers[i];
+                    }
+                }
+                return false;
+            }
+            $("#btnFindBilboard").click(function(){
+                var id = $("#txtFindBilboard").val();
+                var lyr = returnBilboardID(id);
+                if (lyr) {
+                    if(lyrSearch) {
+                        lyrSearch.remove();
+                    }
+                    lyrSearch = L.geoJSON(lyr.toGeoJson(),{style:{color:'red',weight:10,opacity:0.5}}).addTo(mymap);
+                    mymap.fitBounds(lyr.getBounds().pad(1));
+                }
+            });
+            
+             function filterBilboard(json) {
+                var att=json.properties;
+                var optFilter = $("input[name=fltBilboard]:checked").val();
+                if (optFilter=='ALL') {
+                    return true;
+                } else {
+                    return (att.status==optFilter);
+                }
+            }
+            
+            $("#txtFindBilboard").on('keyup paste', function(){
+                var val = $("#txtFindBilboard").val();
+                testLayerAttribute(arBillboardIDs, val, "Bilboard ID", "#divFindBilboard", "#divBilboardError", "#btnFindBilboard");
+            });
+            
+            $("#btnFindBilboard").click(function(){
+                var val = $("#txtFindBilboard").val();
+                var lyr = returnLayerByAttribute(lyrbilboards,'id',val);
+                if (lyr) {
+                    if (lyrSearch) {
+                        lyrSearch.remove();
+                    }
+                    lyrSearch = L.circle(lyr.getLatLng(), {radius:30, color:'red', weight:10, opacity:0.5, fillOpacity:0}).addTo(mymap);
+                    mymap.setView(lyr.getLatLng(), 14);
+                    var att = lyr.feature.properties;
+                    $("#divBilboardData").html(" &nbsp; &nbsp;&nbsp;"+"<img src='img/" + att.image_url+"' id='popimg' >"+"<b>"+"BillboardID:#"+" &nbsp; &nbsp;&nbsp;"+att.id+"</b>"+ 
+                '<table>\
+                  \
+                    <tr>\
+                        <th scope="row">Status</th>\
+                        <td>' + att.status + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Size</th>\
+                        <td>' + att.size + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Direction</th>\
+                        <td>' + att.location + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Available date</th>\
+                        <td>' + att.end_time + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UTM_X</th>\
+                        <td>' + att.x_coordinate + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UTM_Y</th>\
+                        <td>' + att.y_coordinate + '</td>\
+                    </tr>\
+                </table>');
+                    $("#divBilboardError").html("");
+                    
+                 } else {
+                    $("#divBilboardError").html("**** Bilboard ID not found ****");
+                }
+            });
+            
+            $("#lblBilboard").click(function(){
+                $("#divBilboardData").toggle(); 
+            });
+            
+            $("input[name=fltBilboard]").click(function(){
+                arBillboardIDs=[];
+                lyrbilboards.refresh();
+            });
+            
+             
+            //  *********  jQuery Event Handlers  ************
+            
+            $("#btnGBH").click(function(){
+               $("#lgndGBHDetail").toggle(); 
+            });
+            
+            $("#btnLocate").click(function(){
+                mymap.locate();
+            });
+            
+            $("#btnShowLegend").click(function(){
+                $("#legend").toggle();
+            });
+            
+            //  ***********  General Functions *********
+            function LatLngToArrayString(ll) {
+                return "["+ll.lat.toFixed(5)+", "+ll.lng.toFixed(5)+"]";
+            }
+            
+            function returnLayerByAttribute(lyr,att,val) {
+                var arLayers = lyr.getLayers();
+                for (i=0;i<arLayers.length-1;i++) {
+                    var ftrVal = arLayers[i].feature.properties[att];
+                    if (ftrVal==val) {
+                        return arLayers[i];
+                    }
+                }
+                return false;
+            }
+            
+            function testLayerAttribute(ar, val, att, fg, err, btn) {
+                if (ar.indexOf(val)<0) {
+                    $(fg).addClass("has-error");
+                    $(err).html("**** "+att+" NOT FOUND ****");
+                    $(btn).attr("disabled", true);
+                } else {
+                    $(fg).removeClass("has-error");
+                    $(err).html("");
+                    $(btn).attr("disabled", false);
+                }
+            }
+          
+        </script>
+        </section>
+    </body>
+</html>
